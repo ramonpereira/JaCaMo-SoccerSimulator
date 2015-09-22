@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organisational-specification 
+    id="soccer"
+    os-version="0.8"
+  
+    xmlns='http://moise.sourceforge.net/os'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://moise.sourceforge.net/os
+                        http://moise.sourceforge.net/xml/os.xsd' >
+    
+	<structural-specification>
+		<role-definitions>
+			<role id="coach" />
+		 	<role id="player" />
+		 		<!-- DF - Defenser -->
+				<role id="df" >	<extends role="player"/>  </role>
+		   		
+		   		<!-- MF - Midfielder -->
+		   		<role id="mf" >	<extends role="player"/>  </role>
+		   		
+		   		<!-- SF - Striker -->
+		   		<role id="sf" >	<extends role="player"/>  </role>
+		</role-definitions>
+		
+		<group-specification id="soccerGroup">
+			<roles>
+		  		<role id="coach" min="1" max="1"/>
+		  		<role id="df"    min="4" max="5"/>
+		  		<role id="mf"  	 min="4" max="5"/>
+		  		<role id="sf"    min="1" max="2"/>
+		 	</roles>
+			<subgroups>
+				<!-- Defensive Formation -->
+				<group-specification id="defensiveFormation">
+					<roles>
+				  		<role id="coach" min="1" max="1"/>
+				  		<role id="df"    min="4" max="5"/>
+				  		<role id="mf"  	 min="4" max="5"/>
+				  		<role id="sf"    min="1" max="2"/>
+				 	</roles>
+				</group-specification>
+		
+				<!-- Offensive Formation -->
+				<group-specification id="offensiveFormation">
+					<roles>
+				  		<role id="coach" min="1" max="1"/>
+				  		<role id="df" 	 min="3" max="3"/>
+				  		<role id="mf"    min="3" max="4"/>
+				  		<role id="sf"    min="3" max="4"/>
+				 	</roles>	
+				</group-specification>
+			</subgroups>
+		</group-specification>
+	</structural-specification>		
+
+	<functional-specification>
+		<scheme id="defensiveScheme">
+			<goal id="defense">
+		    	<plan operator="parallel">
+		       		<goal id="defending"    />
+		       		<goal id="kickBallAway" />
+		     	</plan>
+		   	</goal>
+		
+			<mission id="defending" >
+				<goal id="defending"/>
+			</mission>
+			
+			<mission id="kickBallAway">
+				<goal id="kickBallAway"/>
+			</mission>
+		</scheme>
+		
+		<scheme id="offensiveScheme" >
+			<goal id="attack">
+		    	<plan operator="parallel">
+		       		<goal id="attacking"      />
+		       		<goal id="kickBallToGoal" />
+		     	</plan>
+		   </goal>
+		
+		   <mission id="attacking" >
+		   		<goal id="attacking"/>
+		   </mission>
+		   
+		   <mission id="kickBallToGoal" >
+		   		<goal id="kickBallToGoal"/>
+		   </mission>
+		</scheme>
+		
+	</functional-specification>
+
+	<normative-specification>
+		<norm id="n1"     type="obligation"    role="coach"  mission="attacking" />
+		<norm id="n2"     type="obligation"    role="coach"  mission="defending" />
+		
+		<norm id="n3"     type="obligation"    role="df"     mission="defending" />
+		<norm id="n4"     type="obligation"    role="df"     mission="kickBallAway" />
+		
+		<norm id="n5"     type="obligation"    role="mf"     mission="defending" />
+		<norm id="n6"     type="obligation"    role="mf"     mission="kickBallAway" />
+		<norm id="n7"     type="obligation"    role="mf"     mission="attacking" />
+		<norm id="n8"     type="obligation"    role="mf"      mission="kickBallToGoal" />
+		
+		<norm id="n9"     type="obligation"    role="sf" 	 mission="attacking" />
+		<norm id="n10"    type="obligation"    role="sf"     mission="kickBallToGoal" />
+	</normative-specification>
+
+</organisational-specification>

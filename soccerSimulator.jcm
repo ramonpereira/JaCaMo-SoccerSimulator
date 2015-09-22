@@ -1,0 +1,39 @@
+mas soccerSimulator {
+
+    agent coach {
+    	instances: 1
+    	focus: soccerField
+    	roles: coach in soccerWorkspace.defensiveFormation
+    }
+    
+    agent coach {
+    	instances: 1
+    	focus: soccerField
+    	roles: coach in soccerWorkspace.offensiveFormation
+    }
+    
+    agent player {
+    	instances: 20
+    	focus: soccerField
+    }
+
+	workspace soccerWorkspace {
+		artifact soccerField: artifacts.SoccerFieldArtifact
+	}
+
+	organisation soccerWorkspace: soccer.xml {
+		group soccer: soccerGroup {
+			group defensiveFormation: defensiveFormation {
+				responsible-for: defensiveScheme
+			}
+		group offensiveFormation: offensiveFormation {
+				responsible-for: offensiveScheme
+			}
+		}
+		scheme defensiveScheme : defensiveScheme
+		scheme offensiveScheme : offensiveScheme
+	}
+
+    asl-path: src/agt/soccer, src/agt/inc 
+    class-path: lib
+}
