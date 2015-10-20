@@ -8,7 +8,7 @@
 +!jcm__focus_env_art([art_env(W,H,A)|T],Try)
 	: true
 <-
-	!join_workspace(W,H); 
+	!in_ora4mas; 
 	if (A \== "") {
 		lookupArtifact(A,AId);
 		+jcm__art(A,AId);
@@ -23,8 +23,12 @@
 	.wait(100);
 	!jcm__focus_env_art(L,Try-1);
 	.
-      
-+!join_workspace(W,_) : jcm__ws(W,I) <- cartago.set_current_wsp(I).      
-+!join_workspace(W,"localhost") <- joinWorkspace(W,I); +jcm__ws(W,I).
-+!join_workspace(W,localhost)   <- joinWorkspace(W,I); +jcm__ws(W,I).
-+!join_workspace(W,H)           <- joinRemoteWorkspace(W,H,I); +jcm__ws(W,I).
+
++!in_ora4mas : in_ora4mas.
++!in_ora4mas : .intend(in_ora4mas)
+   <- .wait({+in_ora4mas},100,_); 
+      !in_ora4mas.
+@lin[atomic]    
++!in_ora4mas
+   <- joinWorkspace("soccerWorkspace",_);
+	  +in_ora4mas.

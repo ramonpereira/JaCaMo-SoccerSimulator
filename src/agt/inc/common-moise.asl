@@ -17,7 +17,7 @@
 @l_focus_org_art[atomic]
 +!jcm__initial_roles([role(O,H,G,R)|T],Try)
 	: true
-   <- !join_workspace(O,H);
+   <- !in_ora4mas;
    	 .print("Lookup for art ", G);
       lookupArtifact(G,GId);
       +jcm__art(G,GId);
