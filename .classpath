@@ -3,16 +3,16 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="**/*.asl" kind="src" path="src/agt"/>
 	<classpathentry kind="src" path="src/env"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/ant-launcher.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/ant.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/c4jason.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/cartago.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/intmas.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/jacamo.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/jade.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/jason.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/javacc.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/junit.jar"/>
-	<classpathentry kind="lib" path="/Applications/JaCaMo-0.4a/lib/moise.jar"/>
+	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/c4jason.jar"/>
+	<classpathentry kind="lib" path="lib/cartago.jar"/>
+	<classpathentry kind="lib" path="lib/intmas.jar"/>
+	<classpathentry kind="lib" path="lib/jacamo.jar"/>
+	<classpathentry kind="lib" path="lib/jade.jar"/>
+	<classpathentry kind="lib" path="lib/jason.jar"/>
+	<classpathentry kind="lib" path="lib/javacc.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/moise.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
